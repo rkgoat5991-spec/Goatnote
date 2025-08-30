@@ -3,14 +3,13 @@
     --bg-header: #101010;
     --bg-highlight: #232323;
     --text-light: #f3f3f3;
-    --text-soft: #ccc;
+    --text-soft: #cccccc;
     --accent-yellow: #ffd700;
     --accent-teal: #4c686e;
     --accent-pink: #e05682;
-    --radius: 10px;
+    --radius: 12px;
 }
 
-/* General */
 body {
     margin: 0;
     padding: 0;
@@ -20,15 +19,14 @@ body {
     min-height: 100vh;
 }
 
-/* Header */
+/* HEADER */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 22px 40px 0 40px;
+    padding: 20px 40px 0 40px;
     background: var(--bg-header);
 }
-
 .logo-container {
     display: flex;
     align-items: center;
@@ -43,7 +41,6 @@ header {
     color: var(--text-light);
     letter-spacing: 1px;
 }
-
 nav ul {
     list-style: none;
     display: flex;
@@ -76,14 +73,13 @@ nav ul li a:hover::after {
     position: absolute;
     bottom: -3px;
     left: 0;
-    border-radius: 1.5px;
+    border-radius: 3px;
 }
-
 .header-buttons .btn-apply-now {
     background: var(--accent-yellow);
     color: #181818;
     font-weight: bold;
-    border-radius: 7px;
+    border-radius: 8px;
     padding: 11px 22px;
     text-transform: uppercase;
     text-decoration: none;
@@ -99,15 +95,14 @@ nav ul li a:hover::after {
     color: var(--accent-teal);
 }
 
-/* Main (Home) Hero */
+/* HERO (HOME) */
 .home-main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     min-height: 70vh;
     text-align: center;
-    background: var(--bg-dark);
+    justify-content: center;
 }
 .hero-content {
     max-width: 700px;
@@ -119,7 +114,6 @@ nav ul li a:hover::after {
     font-weight: 800;
     margin-bottom: 20px;
     color: var(--text-light);
-    line-height: 1.1;
 }
 .hero-content p {
     font-size: 1.13em;
@@ -149,7 +143,7 @@ nav ul li a:hover::after {
     transform: translateY(-2px) scale(1.04);
 }
 
-/* About Page */
+/* ABOUT PAGE */
 .about-main {
     display: flex;
     flex-direction: column;
@@ -169,7 +163,7 @@ nav ul li a:hover::after {
     width: 110px;
     height: 110px;
     object-fit: contain;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     border-radius: var(--radius);
     background: var(--bg-highlight);
     box-shadow: 0 6px 32px rgba(0,0,0,0.12);
