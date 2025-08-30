@@ -1,6 +1,8 @@
-/* Color Palette from Logo */
+/* Additions/updates for hero, nav, and logo highlighting */
+
 :root {
     --bg-dark: #121212;
+    --bg-hero: #181818;
     --text-light: #e0e0e0;
     --text-soft: #b0b0b0;
     --accent-yellow: #ffd700;
@@ -9,9 +11,31 @@
     --accent-blue: #3a5c7a;
 }
 
-/* Basic Styles */
+/* General font improvement for headline */
+.hero-content h1 {
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-size: 3.2em;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--text-light);
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+.headline-accent {
+    color: var(--accent-yellow);
+}
+.headline-delivered {
+    color: var(--accent-teal);
+}
+.hero-lead {
+    font-size: 1.25em;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    margin-top: 0;
+    font-weight: 500;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-soft); 
     margin: 0;
@@ -19,13 +43,105 @@ body {
     line-height: 1.6;
 }
 
-a {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: color 0.3s;
+/* Improved hero section background */
+.home-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px);
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg-hero) 0%, #222 100%);
 }
 
-/* Header */
+.hero-content {
+    max-width: 800px;
+    padding: 32px 20px 24px 20px;
+    margin: auto;
+}
+
+/* Logo subtext */
+.logo-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.logo-subtext {
+    font-size: 0.7em;
+    color: var(--accent-teal);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: -4px;
+    font-weight: 600;
+}
+
+/* CTA Button (Get Started) */
+.hero-buttons .btn-get-started {
+    background-color: var(--accent-yellow);
+    color: var(--bg-dark);
+    font-size: 1.2em;
+    padding: 16px 40px;
+    border-radius: 7px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 24px rgba(255, 215, 0, 0.15);
+    transition: background-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+    border: none;
+    outline: none;
+}
+.hero-buttons .btn-get-started:hover {
+    background-color: #fffbe6;
+    color: var(--accent-blue);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.25);
+}
+
+/* Simple arrow style for CTA */
+.btn-arrow {
+    stroke: currentColor;
+    display: inline-block;
+}
+
+/* Navigation enhancements */
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+header nav ul li {
+    margin: 0 15px;
+}
+header nav ul li a {
+    font-weight: 500;
+    color: var(--text-light);
+    position: relative;
+    padding-bottom: 3px;
+    transition: color 0.3s;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: var(--accent-yellow);
+}
+header nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--accent-yellow);
+    transition: width .3s;
+    position: absolute;
+    bottom: -4px; left: 0;
+}
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+    width: 100%;
+}
+
+/* Header styling improvements */
 header {
     display: flex;
     justify-content: space-between;
@@ -35,292 +151,30 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
+/* Responsive headline and hero */
+@media (max-width: 700px) {
+    .hero-content h1 {
+        font-size: 2em;
+        letter-spacing: -1px;
+    }
+    .hero-content {
+        padding: 18px 4vw 16px 4vw;
+    }
+    .header-logo {
+        height: 24px;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 8vw;
+    }
+    header nav ul {
+        flex-wrap: wrap;
+    }
+    .header-buttons .btn-apply-now {
+        margin-left: 0;
+        margin-top: 12px;
+    }
 }
 
-.header-logo {
-    height: 30px;
-    margin-right: 10px;
-}
-
-.logo-text {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-header nav ul li {
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    font-weight: 500;
-}
-
-header nav ul li a:hover {
-    color: var(--accent-teal);
-}
-
-.header-buttons .btn-apply-now {
-    margin-left: 15px;
-    padding: 8px 16px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: var(--accent-yellow);
-    color: var(--bg-dark);
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.header-buttons .btn-apply-now:hover {
-    background-color: #f0c900;
-}
-
-/* Main Content - Home Page */
-.home-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 120px);
-    text-align: center;
-    background-color: var(--bg-dark);
-}
-
-.hero-content {
-    max-width: 800px;
-    padding: 20px;
-}
-
-.hero-content h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    color: var(--text-light);
-}
-
-.hero-buttons a {
-    padding: 12px 24px;
-    font-size: 1.1em;
-    border-radius: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 0 10px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn-get-started {
-    background-color: var(--accent-yellow);
-    color: var(--bg-dark);
-}
-
-.btn-get-started:hover {
-    background-color: #f0c900;
-}
-
-/* Main Content - Other Pages */
-.content-main {
-    padding: 40px;
-    max-width: 800px;
-    margin: 0 auto;
-    min-height: calc(100vh - 120px);
-}
-
-.content-main h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: var(--accent-teal);
-}
-
-.about-content p, .terms-content p, .terms-content ul, .terms-content ol {
-    margin-bottom: 20px;
-}
-
-.terms-content h2 {
-    color: var(--accent-teal);
-    border-bottom: 1px solid var(--accent-teal);
-    padding-bottom: 5px;
-    margin-top: 30px;
-}
-
-.terms-content ul, .terms-content ol {
-    padding-left: 20px;
-}
-
-.terms-content ul li::before {
-    content: "•";
-    color: var(--accent-red); 
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-
-.founder-note {
-    font-style: italic;
-    margin-top: 40px;
-    text-align: right;
-    color: var(--text-light);
-}
-
-/* Artists Page Styles */
-.artists-content {
-    text-align: center;
-}
-
-.artist-profile {
-    display: inline-block;
-    width: 250px;
-    margin: 20px;
-    padding: 20px;
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
-
-.artist-profile h2 {
-    color: var(--accent-yellow);
-    margin-top: 10px;
-}
-
-.artist-quote-circle {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 10px;
-    border-radius: 50%;
-    border: 3px solid var(--accent-teal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    font-style: italic;
-    color: var(--text-light);
-    font-size: 0.9em;
-}
-
-.artist-quote-circle p {
-    color: var(--accent-yellow); 
-    font-size: 1.1em;
-    font-weight: 500;
-}
-
-.artist-profile p {
-    font-size: 0.9em;
-    color: var(--text-soft);
-    margin-bottom: 5px;
-}
-
-.cta-section {
-    margin-top: 40px;
-    font-size: 1.2em;
-}
-
-.cta-section a {
-    color: var(--accent-yellow);
-    font-weight: bold;
-}
-
-/* FAQ Page Styles */
-.faq-content {
-    text-align: left;
-}
-
-.faq-content h1 {
-    text-align: center;
-}
-
-.faq-content p {
-    color: var(--text-soft);
-}
-
-.faq-item {
-    margin-bottom: 30px;
-    background-color: #1a1a1a;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.faq-item h2 {
-    color: var(--accent-yellow);
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-/* My Work Page Styles */
-.my-work-content {
-    text-align: center;
-}
-
-.my-work-link {
-    margin-top: 30px;
-}
-
-/* Contact Page Styles */
-.contact-content {
-    text-align: center;
-}
-
-.contact-info {
-    margin-top: 30px;
-}
-
-.contact-info a {
-    color: var(--accent-yellow);
-    font-weight: bold;
-}
-
-/* Global Button Style */
-.btn-primary {
-    background-color: var(--accent-yellow);
-    color: var(--bg-dark);
-    padding: 12px 24px;
-    font-size: 1.1em;
-    border-radius: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn-primary:hover {
-    background-color: #f0c900;
-}
-
-/* Footer */
-footer {
-    background-color: #1a1a1a;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 20px;
-}
-
-footer p {
-    margin: 5px 0;
-    font-size: 0.9em;
-}
-
-.footer-mission {
-    font-weight: bold;
-    color: var(--accent-yellow);
-}
-
-.footer-copyright {
-    color: var(--text-soft);
-}
-
-.footer-love {
-    font-style: italic;
-    color: var(--text-light);
-}
+/* Keep your other existing CSS for footer, other pages, etc. */
