@@ -1,85 +1,227 @@
-/* --- Add these styles or merge with your existing CSS --- */
+:root {
+    --bg-dark: #181818;
+    --bg-darker: #141414;
+    --bg-highlight: #232323;
+    --text-light: #f3f3f3;
+    --text-soft: #cccccc;
+    --accent-yellow: #ffd700;
+    --accent-teal: #4c686e;
+    --accent-purple: #7b62ff;
+    --accent-pink: #e05682;
+    --card-radius: 16px;
+}
 
-/* About Page Enhancements */
+/* General */
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 2.3em;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.1em;
+    margin-bottom: 0.4em;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px 0 48px;
+    background: #101010;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    height: 38px;
+    margin-right: 12px;
+}
+
+.logo-text {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--text-light);
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 18px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    position: relative;
+    transition: color 0.2s;
+    padding-bottom: 3px;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: var(--accent-yellow);
+}
+
+nav ul li a.active::after,
+nav ul li a:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-yellow);
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    border-radius: 1.5px;
+}
+
+.header-buttons .btn-apply-now {
+    background: var(--accent-yellow);
+    color: #181818;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 12px 28px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    border: none;
+    margin-left: 16px;
+    font-size: 1em;
+    display: inline-block;
+    letter-spacing: 1.5px;
+}
+
+.header-buttons .btn-apply-now:hover {
+    background: #fffbe6;
+    color: var(--accent-teal);
+}
+
+/* About Page */
 .about-main {
-    background: #161616;
-    min-height: 100vh;
+    background: var(--bg-dark);
+    min-height: 90vh;
+    padding-bottom: 48px;
 }
 
 .about-hero {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 36px;
-    padding: 48px 5vw 28px 5vw;
-    background: linear-gradient(90deg,#202020 60%,#181818 100%);
-    border-bottom: 2px solid #232323;
+    margin-top: 54px;
+    margin-bottom: 28px;
 }
 
-.about-logo-hero {
+.about-hero-logo {
     width: 120px;
     height: 120px;
-    border-radius: 14px;
-    background: #222;
-    box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+    object-fit: contain;
+    margin-bottom: 18px;
+    border-radius: 16px;
+    background: var(--bg-highlight);
+    box-shadow: 0 6px 32px rgba(0,0,0,0.15);
 }
 
-.about-hero h1 {
-    font-size: 2.6em;
-    color: #fff;
-    margin-bottom: 6px;
-    letter-spacing: 1.5px;
+.about-hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .about-tagline {
-    color: var(--accent-yellow,#ffd700);
-    font-size: 1.15em;
+    color: var(--accent-yellow);
+    font-size: 1.18em;
     font-weight: 600;
-    margin: 0;
-    letter-spacing: 0.5px;
+    margin-top: 0.2em;
+    margin-bottom: 0.3em;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+.about-tagline .no-contracts {
+    color: var(--accent-teal);
+    font-weight: 700;
+}
+.about-tagline .no-fees {
+    color: var(--accent-pink);
+    font-weight: 700;
 }
 
 .about-content {
-    max-width: 900px;
+    max-width: 880px;
+    color: var(--text-soft);
+    font-size: 1.18em;
+    font-family: 'Montserrat', Arial, sans-serif;
     margin: 0 auto;
-    padding: 32px 5vw 24px 5vw;
+    padding: 18px 24px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
 }
 
-.about-story {
-    margin-bottom: 32px;
-}
-
-.about-story h3,
-.about-how h3,
-.about-values h3 {
-    color: var(--accent-teal,#4c686e);
-    text-transform: uppercase;
-    font-size: 1.2em;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+.about-story p {
+    color: var(--text-light);
+    margin-bottom: 0.8em;
+    line-height: 1.7;
 }
 
 .about-highlights {
     display: flex;
-    gap: 18px;
-    margin-bottom: 38px;
+    gap: 20px;
     justify-content: center;
+    margin-bottom: 0.8em;
 }
 
 .about-card {
-    background: #232323;
-    border-radius: 11px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.13);
-    padding: 20px 26px;
+    background: var(--bg-highlight);
+    border-radius: var(--card-radius);
+    box-shadow: 0 3px 16px rgba(0,0,0,0.13);
+    padding: 22px 30px;
     flex: 1 1 180px;
-    min-width: 160px;
+    min-width: 180px;
     text-align: center;
+    transition: transform .12s;
 }
 
-.about-card h4 {
-    margin: 0 0 7px 0;
-    color: var(--accent-yellow,#ffd700);
-    font-size: 1.15em;
+.about-card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 6px 22px rgba(255,215,0,0.11);
+}
+
+.about-card h3 {
+    margin: 0 0 9px 0;
+    color: var(--accent-yellow);
+    font-size: 1.18em;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -88,92 +230,148 @@
     margin: 0;
     color: #ededed;
     font-weight: 500;
-}
-
-.about-how ul,
-.about-values ul {
-    margin: 0 0 18px 16px;
-    padding: 0;
-}
-
-.about-how li,
-.about-values li {
-    margin-bottom: 8px;
-    color: #ccc;
     font-size: 1em;
 }
 
-.about-how strong {
-    color: var(--accent-yellow,#ffd700);
+.about-how ol {
+    margin: 0 0 18px 18px;
+    padding: 0;
 }
 
+.about-how li {
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 1.04em;
+    line-height: 1.5;
+}
+
+.about-how b {
+    color: var(--accent-yellow);
+}
+
+.about-values ul {
+    margin: 0 0 12px 18px;
+    padding: 0;
+}
+.about-values li {
+    margin-bottom: 8px;
+    color: var(--text-light);
+    font-size: 1.04em;
+    line-height: 1.5;
+}
+
+/* Founder note */
 .founder-note {
-    margin-top: 32px;
+    margin-top: 12px;
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    background: #202020;
-    border-radius: 9px;
-    padding: 18px 24px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.11);
-}
-
-.founder-avatar {
-    width: 68px;
-    height: 68px;
-    border-radius: 50%;
-    background: #232323;
-    object-fit: cover;
-    border: 2px solid #ffd700;
+    background: var(--bg-highlight);
+    border-radius: 13px;
+    padding: 20px 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .founder-note blockquote {
     margin: 0;
     color: #fafafa;
-    font-size: 1.1em;
-    line-height: 1.5;
+    font-size: 1.13em;
+    line-height: 1.6;
     font-style: italic;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.founder-icon {
+    font-size: 2.1em;
+    margin-right: 0.8em;
+    vertical-align: middle;
 }
 
 .founder-note footer {
-    color: var(--accent-teal,#4c686e);
+    color: var(--accent-teal);
     font-weight: bold;
     margin-top: 6px;
     font-size: 1em;
 }
 
 .about-founder {
-    color: var(--accent-yellow,#ffd700);
+    color: var(--accent-yellow);
 }
 
-@media (max-width: 700px) {
-    .about-hero {
+/* Footer */
+footer {
+    text-align: center;
+    background: #101010;
+    padding: 28px 0 18px 0;
+    margin-top: 32px;
+}
+
+.footer-mission {
+    font-weight: bold;
+    color: var(--accent-yellow);
+}
+
+.footer-love {
+    color: var(--accent-teal);
+    font-style: italic;
+}
+
+.footer-heart {
+    color: var(--accent-pink);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 18px;
-        padding: 32px 6vw 14px 6vw;
+        padding: 18px 5vw 0 5vw;
     }
-    .about-logo-hero {
-        width: 72px;
-        height: 72px;
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    .about-hero h1 {
-        font-size: 1.6em;
+    .header-buttons .btn-apply-now {
+        margin-top: 12px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .about-main {
+        padding-bottom: 18px;
     }
     .about-content {
-        padding: 18px 4vw;
+        padding: 10px 8vw 0 8vw;
     }
     .about-highlights {
         flex-direction: column;
-        gap: 10px;
+        gap: 16px;
+    }
+    .about-card {
+        padding: 16px 12vw;
     }
     .founder-note {
         flex-direction: column;
-        gap: 8px;
-        padding: 12px 12px;
+        gap: 10px;
+        padding: 14px 14px;
     }
-    .founder-avatar {
-        width: 46px;
-        height: 46px;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+    .about-hero-logo {
+        width: 74px;
+        height: 74px;
+    }
+    .about-hero h1 {
+        font-size: 1.1em;
+    }
+    .about-content {
+        font-size: 1em;
+        padding: 8px 3vw 0 3vw;
     }
 }
