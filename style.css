@@ -1,196 +1,179 @@
-:root {
-    --bg-dark: #181818;
-    --text-light: #e0e0e0;
-    --accent-yellow: #ffd700;
-    --accent-teal: #4c686e;
+/* --- Add these styles or merge with your existing CSS --- */
+
+/* About Page Enhancements */
+.about-main {
+    background: #161616;
+    min-height: 100vh;
 }
 
-/* General */
-body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg-dark);
-    color: var(--text-light);
-    font-family: 'Montserrat', Arial, sans-serif;
-}
-
-/* Header */
-header {
+.about-hero {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 24px 48px 0 48px;
-    background: #101010;
+    gap: 36px;
+    padding: 48px 5vw 28px 5vw;
+    background: linear-gradient(90deg,#202020 60%,#181818 100%);
+    border-bottom: 2px solid #232323;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
+.about-logo-hero {
+    width: 120px;
+    height: 120px;
+    border-radius: 14px;
+    background: #222;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.18);
 }
 
-.header-logo {
-    height: 38px;
-    margin-right: 12px;
+.about-hero h1 {
+    font-size: 2.6em;
+    color: #fff;
+    margin-bottom: 6px;
+    letter-spacing: 1.5px;
 }
 
-.logo-text {
-    font-size: 1.6em;
-    font-weight: bold;
-    color: var(--text-light);
-    letter-spacing: 1px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 18px;
-}
-
-nav ul li a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1em;
-    position: relative;
-    transition: color 0.2s;
-    padding-bottom: 3px;
-}
-
-nav ul li a.active,
-nav ul li a:hover {
-    color: var(--accent-yellow);
-}
-
-nav ul li a.active::after,
-nav ul li a:hover::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: var(--accent-yellow);
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    border-radius: 1.5px;
-}
-
-.header-buttons .btn-apply-now {
-    background: var(--accent-yellow);
-    color: #181818;
-    font-weight: bold;
-    border-radius: 6px;
-    padding: 12px 24px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-    border: none;
-    margin-left: 16px;
-    font-size: 1em;
-    display: inline-block;
-}
-
-.header-buttons .btn-apply-now:hover {
-    background: #fffbe6;
-    color: var(--accent-teal);
-}
-
-/* Hero */
-.home-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
-    text-align: center;
-    background: var(--bg-dark);
-}
-
-.hero-content {
-    max-width: 700px;
-    margin: auto;
-    padding: 40px 24px 24px 24px;
-}
-
-.hero-content h1 {
-    font-size: 2.7em;
-    font-weight: 800;
-    margin-bottom: 28px;
-    color: var(--text-light);
-    line-height: 1.1;
-}
-
-.hero-content p {
-    font-size: 1.2em;
-    margin: 12px 0;
-    color: #dedede;
-    font-weight: 500;
-}
-
-.hero-buttons {
-    margin-top: 24px;
-}
-
-.btn-get-started {
-    background: var(--accent-yellow);
-    color: #181818;
+.about-tagline {
+    color: var(--accent-yellow,#ffd700);
     font-size: 1.15em;
-    font-weight: bold;
-    padding: 16px 40px;
-    border-radius: 7px;
-    text-decoration: none;
-    display: inline-block;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 5vw 24px 5vw;
+}
+
+.about-story {
+    margin-bottom: 32px;
+}
+
+.about-story h3,
+.about-how h3,
+.about-values h3 {
+    color: var(--accent-teal,#4c686e);
     text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: 700;
     letter-spacing: 1px;
-    transition: background 0.2s, color 0.2s, transform 0.2s;
+    margin-bottom: 10px;
 }
 
-.btn-get-started:hover {
-    background: #fffbe6;
-    color: var(--accent-teal);
-    transform: translateY(-2px) scale(1.04);
+.about-highlights {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 38px;
+    justify-content: center;
 }
 
-/* Footer */
-footer {
+.about-card {
+    background: #232323;
+    border-radius: 11px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+    padding: 20px 26px;
+    flex: 1 1 180px;
+    min-width: 160px;
     text-align: center;
-    background: #101010;
-    padding: 28px 0 18px 0;
+}
+
+.about-card h4 {
+    margin: 0 0 7px 0;
+    color: var(--accent-yellow,#ffd700);
+    font-size: 1.15em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.about-card p {
+    margin: 0;
+    color: #ededed;
+    font-weight: 500;
+}
+
+.about-how ul,
+.about-values ul {
+    margin: 0 0 18px 16px;
+    padding: 0;
+}
+
+.about-how li,
+.about-values li {
+    margin-bottom: 8px;
+    color: #ccc;
+    font-size: 1em;
+}
+
+.about-how strong {
+    color: var(--accent-yellow,#ffd700);
+}
+
+.founder-note {
     margin-top: 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: #202020;
+    border-radius: 9px;
+    padding: 18px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.11);
 }
 
-.footer-mission {
-    font-weight: bold;
-    color: var(--accent-yellow);
+.founder-avatar {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #232323;
+    object-fit: cover;
+    border: 2px solid #ffd700;
 }
 
-.footer-love {
-    color: var(--accent-teal);
+.founder-note blockquote {
+    margin: 0;
+    color: #fafafa;
+    font-size: 1.1em;
+    line-height: 1.5;
     font-style: italic;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    header {
+.founder-note footer {
+    color: var(--accent-teal,#4c686e);
+    font-weight: bold;
+    margin-top: 6px;
+    font-size: 1em;
+}
+
+.about-founder {
+    color: var(--accent-yellow,#ffd700);
+}
+
+@media (max-width: 700px) {
+    .about-hero {
         flex-direction: column;
         align-items: flex-start;
-        padding: 18px 5vw 0 5vw;
+        gap: 18px;
+        padding: 32px 6vw 14px 6vw;
     }
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+    .about-logo-hero {
+        width: 72px;
+        height: 72px;
     }
-    .header-buttons .btn-apply-now {
-        margin-top: 12px;
-        margin-left: 0;
+    .about-hero h1 {
+        font-size: 1.6em;
     }
-    .hero-content h1 {
-        font-size: 2em;
+    .about-content {
+        padding: 18px 4vw;
     }
-    .hero-content {
-        padding: 24px 6vw 18px 6vw;
+    .about-highlights {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .founder-note {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 12px;
+    }
+    .founder-avatar {
+        width: 46px;
+        height: 46px;
     }
 }
